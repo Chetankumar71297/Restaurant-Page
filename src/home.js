@@ -1,6 +1,6 @@
 import appendHeaderFooterContent from "./header-footer";
 
-const mainContent = (function createMainContent() {
+const homeMainContent = (function createMainContent() {
   const mainContent = document.createElement("main");
   const heroContent = document.createElement("div"); //.setAttribute("id", "hero");
   const heroHeading = document.createElement("h2");
@@ -33,7 +33,7 @@ const mainContent = (function createMainContent() {
 function createHomePage() {
   const contentBox = document.querySelector("#content");
   appendHeaderFooterContent();
-  contentBox.insertBefore(mainContent.mainContent, contentBox.children[1]);
+  contentBox.insertBefore(homeMainContent.mainContent, contentBox.children[1]);
 }
 
 export default createHomePage;

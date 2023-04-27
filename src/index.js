@@ -1,3 +1,6 @@
 import createHomePage from "./home";
+
 import "./style.css";
-createHomePage();
+import createMenuPage from "./menu";
+//createHomePage();
+createMenuPage();
