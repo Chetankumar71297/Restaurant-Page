@@ -15,7 +15,7 @@ const headerContent = (function createHeader() {
   tabContainer.append(homeTab, menuTab, contactTab);
   header.append(heading, navigation);
 
-  return { header };
+  return { header, homeTab, menuTab, contactTab };
 })();
 
 const footerContent = (function createFooter() {
@@ -32,4 +32,4 @@ function appendHeaderFooterContent() {
   contentBox.append(headerContent.header, footerContent.footer);
 }
 
-export default appendHeaderFooterContent;
+export { appendHeaderFooterContent, headerContent };

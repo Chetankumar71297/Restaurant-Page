@@ -1,7 +1,8 @@
-import appendHeaderFooterContent from "./header-footer";
+import { appendHeaderFooterContent } from "./header-footer";
 
 const homeMainContent = (function createMainContent() {
   const mainContent = document.createElement("main");
+  mainContent.classList.add("mainTag");
   const heroContent = document.createElement("div"); //.setAttribute("id", "hero");
   const heroHeading = document.createElement("h2");
   heroHeading.textContent = "Welcome to our Indian restaurant!";
@@ -30,10 +31,14 @@ const homeMainContent = (function createMainContent() {
   return { mainContent };
 })();
 
-function createHomePage() {
+function createHomePageOnFirstLoad() {
   const contentBox = document.querySelector("#content");
   appendHeaderFooterContent();
   contentBox.insertBefore(homeMainContent.mainContent, contentBox.children[1]);
 }
 
-export default createHomePage;
+function createHomePage() {
+  const mainTag = document.querySelector(".mainTag");
+  mainTag.parentNode.replaceChild(homeMainContent.mainContent, mainTag);
+}
+export { createHomePage, createHomePageOnFirstLoad };

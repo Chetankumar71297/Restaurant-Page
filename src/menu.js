@@ -1,7 +1,6 @@
-import appendHeaderFooterContent from "./header-footer";
-
 const menuMainContent = (function createMainContent() {
   const mainContent = document.createElement("main");
+  mainContent.classList.add("mainTag");
   const menuHeading = document.createElement("h2");
   menuHeading.textContent = "Our Menu";
   const menuList = document.createElement("ul");
@@ -20,9 +19,8 @@ const menuMainContent = (function createMainContent() {
 })();
 
 function createMenuPage() {
-  const contentBox = document.querySelector("#content");
-  appendHeaderFooterContent();
-  contentBox.insertBefore(menuMainContent.mainContent, contentBox.children[1]);
+  const mainTag = document.querySelector(".mainTag");
+  mainTag.parentNode.replaceChild(menuMainContent.mainContent, mainTag);
 }
 
 export default createMenuPage;

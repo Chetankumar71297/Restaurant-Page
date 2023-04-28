@@ -1,7 +1,6 @@
-import appendHeaderFooterContent from "./header-footer";
-
 const contactMainContent = (function () {
   const mainContent = document.createElement("main");
+  mainContent.classList.add("mainTag");
   const contactHeading = document.createElement("h2");
   contactHeading.textContent = "Contact Details";
   const phoneNo = document.createElement("p");
@@ -14,12 +13,8 @@ const contactMainContent = (function () {
 })();
 
 function createContactPage() {
-  const contentBox = document.querySelector("#content");
-  appendHeaderFooterContent();
-  contentBox.insertBefore(
-    contactMainContent.mainContent,
-    contentBox.children[1]
-  );
+  const mainTag = document.querySelector(".mainTag");
+  mainTag.parentNode.replaceChild(contactMainContent.mainContent, mainTag);
 }
 
 export default createContactPage;
